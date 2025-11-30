@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-11-30T15:24:25.760446",
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador",
+      "username": "admin",
+      "hashed_password": "$argon2id$v=19$m=65536,t=3,p=4$BeC89/5fCyHEGKPUei9F6A$qS0f9hlWhZK4/f6bn1Q2DyRgWOG+Fes18sZRc/1U6zs",
+      "role": "admin",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "vendedor",
+      "username": "Vendedor",
+      "hashed_password": "$argon2id$v=19$m=65536,t=3,p=4$JQRgLEWoFcI4hxBi7D1nzA$bbnwwMlrgBfyrBX35aMg9rHGXwhZtjnECEGgEBZtWqA",
+      "role": "seller",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "Usu\u00e1rio Teste",
+      "username": "teste",
+      "hashed_password": "$argon2id$v=19$m=65536,t=3,p=4$/X+v1RrDeK81JgSA0JozZg$aM33jmpUFxhPZpp8fQ4Ro4cS155lPO7E3gUkQWDklQU",
+      "role": "manager",
+      "is_active": true
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Arroz 5kg",
+      "barcode": "5188585",
+      "price": 10.0,
+      "cost_price": 9.0,
+      "stock_quantity": 237.0,
+      "category": "Alimentos",
+      "min_stock": 5.0,
+      "is_active": true
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "terminal_id": "CAIXA-001",
+      "start_time": "2025-11-30T15:21:45.235986+00:00",
+      "end_time": "2025-11-30T15:25:02.638149+00:00",
+      "initial_balance": 100.0,
+      "final_balance": 200.0,
+      "status": "closed"
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "session_id": 1,
+      "total_amount": 50.0,
+      "payment_method": "dinheiro",
+      "timestamp": "2025-11-30T15:24:13.186081+00:00",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "session_id": 1,
+      "total_amount": 50.0,
+      "payment_method": "dinheiro",
+      "timestamp": "2025-11-30T15:24:34.353150+00:00",
+      "status": "completed"
+    }
+  ],
+  "sale_items": [
+    {
+      "id": 1,
+      "sale_id": 1,
+      "product_id": 1,
+      "quantity": 5.0,
+      "unit_price": 10.0,
+      "subtotal": 50.0
+    },
+    {
+      "id": 2,
+      "sale_id": 2,
+      "product_id": 1,
+      "quantity": 5.0,
+      "unit_price": 10.0,
+      "subtotal": 50.0
+    }
+  ],
+  "stock_movements": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "quantity_change": 100.0,
+      "movement_type": "entry",
+      "timestamp": "2025-11-30T14:40:10.984437+00:00",
+      "description": "Estoque Inicial"
+    },
+    {
+      "id": 2,
+      "product_id": 1,
+      "quantity_change": 150.0,
+      "movement_type": "entry",
+      "timestamp": "2025-11-30T14:57:16.358268+00:00",
+      "description": "Reposi\u00e7\u00e3o de Estoque"
+    },
+    {
+      "id": 3,
+      "product_id": 1,
+      "quantity_change": -3.0,
+      "movement_type": "sale",
+      "timestamp": "2025-11-30T15:02:05.621349+00:00",
+      "description": "Venda PDV"
+    },
+    {
+      "id": 4,
+      "product_id": 1,
+      "quantity_change": -5.0,
+      "movement_type": "sale",
+      "timestamp": "2025-11-30T15:24:13.186081+00:00",
+      "description": "Venda PDV"
+    },
+    {
+      "id": 5,
+      "product_id": 1,
+      "quantity_change": -5.0,
+      "movement_type": "sale",
+      "timestamp": "2025-11-30T15:24:34.353150+00:00",
+      "description": "Venda PDV"
+    }
+  ]
+}

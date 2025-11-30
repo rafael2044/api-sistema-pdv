@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg            # Driver assíncrono para Postgres
+pydantic
+pydantic-settings
+python-jose[cryptography]  # Para tokens JWT
+passlib[bcrypt]    # Para hash de senhas
+python-multipart   # Para login form-data
