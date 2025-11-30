@@ -8,14 +8,12 @@ from app.database import engine, Base, SessionLocal
 from app.models import User
 from app.auth import get_password_hash
 from app.models import UserRole
+from app.config import settings
 
 app = FastAPI(title="PDV System API")
 
 # Configuração de CORS (Essencial para o Next.js conversar com FastAPI)
-origins = [
-    "http://localhost:3000", # Next.js padrão
-    "http://localhost:8000",
-]
+origins = [settings.URL_FRONTEND]
 
 app.add_middleware(
     CORSMiddleware,
