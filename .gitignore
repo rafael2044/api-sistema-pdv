@@ -10,6 +10,8 @@ __pycache__/
 # C extensions
 *.so
 
+backups/*
+
 .venv
 
 # Distribution / packaging
