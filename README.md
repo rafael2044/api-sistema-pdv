@@ -62,6 +62,9 @@ Edite o arquivo `.env` e configure as variaveis de ambiente:
     # Tempo de vida do token de acesso em minutos (Ex: 720 = 12 horas / turno de trabalho)
     ACCESS_TOKEN_EXPIRE_MINUTES=720
 
+    # URL do frontend
+    URL_FRONTEND=http://localhost:3000
+
 
 # 💾 Banco de Dados
 
