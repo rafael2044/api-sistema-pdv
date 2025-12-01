@@ -54,7 +54,7 @@ async def startup():
             await db.commit()
             print("✅ Usuário criado com sucesso!")
             print("👉 Login: admin")
-            print("👉 Senha: admin\n")
+            print("👉 Senha: admin123\n")
         else:
             print("\n--- Inicialização: O sistema já possui usuários cadastrados. ---\n")
 
