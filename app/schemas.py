@@ -8,6 +8,7 @@ from app.models import SaleStatus
 # --- Produto ---
 class ProductSimple(BaseModel):
     name: str
+    is_weighted: bool
     class Config:
         from_attributes = True
 
@@ -19,6 +20,8 @@ class ProductBase(BaseModel):
     category: Optional[str] = None
     min_stock: float = 5.0
     is_active: bool = True
+    is_weighted: bool = False # <--- NOVO CAMPO
+
 
 class ProductCreate(ProductBase):
     stock_quantity: float = 0.0 # Estoque inicial opcional
@@ -38,7 +41,8 @@ class ProductUpdate(BaseModel):
     category: Optional[str] = None
     min_stock: float = 5.0
     is_active: Optional[bool] = None
-    
+    is_weighted: Optional[bool] = None # <--- NOVO CAMPO
+
 class UserResponse(BaseModel):
     id: int
     name: str

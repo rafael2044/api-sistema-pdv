@@ -49,6 +49,7 @@ class Product(Base):
     category: Mapped[str] = mapped_column(String, nullable=True)
     min_stock: Mapped[float] = mapped_column(Float, default=5.0) # Para alertas
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_weighted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=True)
 
 class CashierSession(Base):
     __tablename__ = "cashier_sessions"

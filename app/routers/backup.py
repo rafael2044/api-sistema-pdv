@@ -196,6 +196,32 @@ async def restore_backup(file: UploadFile = File(...), db: AsyncSession = Depend
         db.add(models.StockMovement(**item))
 
     await db.commit()
+
+    # 3. CORREÇÃO DE SEQUÊNCIAS (RESET ID) - FIX PARA POSTGRESQL
+    # Ajustamos o contador de cada tabela para MAX(id) + 1
+    tables = [
+        "users", 
+        "products", 
+        "cashier_sessions", 
+        "sales", 
+        "sale_items", 
+        "stock_movements"
+    ]
+
+    for table in tables:
+        try:
+            # Comando SQL para Postgres resetar a sequence
+            # setval define o valor atual. nextval será valor + 1
+            # COALESCE garante que se a tabela estiver vazia, define como 1
+            seq_name = f"{table}_id_seq"
+            sql = text(f"SELECT setval('{seq_name}', (SELECT COALESCE(MAX(id), 0) FROM {table}), true);")
+            await db.execute(sql)
+        except Exception as e:
+            print(f"Erro ao resetar sequence da tabela {table}: {e}")
+            # Em alguns ambientes o nome da sequence pode ser diferente, mas não abortamos o processo
+            continue
+            
+    await db.commit()
     
     return {"message": "Restauração concluída com sucesso! Faça login novamente."}
 
