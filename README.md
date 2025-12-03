@@ -16,8 +16,6 @@ API robusta e assíncrona para sistema de Ponto de Venda, desenvolvida com Pytho
 
 Entre na pasta do backend e crie um ambiente virtual para isolar as dependências:
 
-    cd backend
-
     # Criar ambiente virtual
     python -m venv venv
 
@@ -25,7 +23,7 @@ Entre na pasta do backend e crie um ambiente virtual para isolar as dependência
     venv\Scripts\activate
 
     # Ativar ambiente (Linux/Mac)
-    source venv/bin/activate
+    # source venv/bin/activate
 
 
 #### 2. Instalar Dependências
@@ -39,8 +37,8 @@ Com o ambiente ativo, instale os pacotes necessários:
 
 Crie uma cópia do arquivo de exemplo:
 
-    cp .env.example .env
-    # Windows: copy .env.example .env
+    copy .env.example .env
+    # Linux: cp .env.example .env
 
 
 Edite o arquivo `.env` e configure as variaveis de ambiente:
@@ -121,3 +119,4 @@ Se o sistema criou o usuário automaticamente na inicialização:
 `app/routers/`: Endpoints da API divididos por módulo (vendas, caixa, produtos, etc).
 
 `app/database.py`: Configuração da conexão assíncrona.
+
